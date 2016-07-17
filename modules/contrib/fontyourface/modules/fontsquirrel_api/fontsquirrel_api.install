@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Google Fonts install file.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function fontsquirrel_api_requirements($phase) {
+  $requirements = [];
+  if (!function_exists('zip_open')) {
+    $requirements['zip_open'] = [
+      'title' => t('PHP zip_open function missing'),
+      'description' => t('The PHP function zip_open is missing. This is required to unzip Font Squirrel Webfonts'),
+      'severity' => REQUIREMENT_ERROR,
+    ];
+  }
+  return $requirements;
+}
+
+/**
+ * Implements hook_install().
+ */
+function fontsquirrel_api_install() {
+  module_set_weight('fontsquirrel_api', 10);
+  $url = \Drupal\Core\Url::fromRoute('font.settings');
+  drupal_set_message(t('Due to the number of fonts, automated import from install for Font Squirrel is disabled. Please use @link to import Font Squirrel Fonts.', ['@link' => \Drupal::l('@font-your-face settings', $url)]));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function fontsquirrel_api_uninstall() {
+  fontyourface_delete('fontsquirrel_api');
+}

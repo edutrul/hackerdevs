@@ -1,0 +1,44 @@
+body {
+  background-image: url(../images/body_bg1.png);  background-repeat: repeat;
+  font-family: Abel, sans-serif;
+}
+body #color a {
+  font-family: Abel, sans-serif;
+  text-decoration: none;
+}
+body #color a:hover {
+  text-decoration: none;
+}
+#main-navbar-collapse li a {
+  font-family: Abel, sans-serif;
+  text-decoration: none;
+}
+#main-navbar-collapse li a:hover {
+  text-decoration: none;
+}
+#footer a {
+  font-family: Abel, sans-serif;
+  text-decoration: none;
+}
+#footer a:hover {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: Roboto, sans-serif!important;
+}
+h2 {
+  font-family: Roboto, sans-serif!important;
+}
+h3 {
+  font-family: Abel, sans-serif!important;
+}
+h4 {
+  font-family: Abel, sans-serif!important;
+}
+h5 {
+  font-family: Abel, sans-serif!important;
+}
+h6 {
+  font-family: Abel, sans-serif!important;
+}
